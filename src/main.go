@@ -9,21 +9,21 @@ import (
 	"runtime"
 	"strings"
 	"syscall"
-	// "os/signal"
-	// "syscall"
 )
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-	currentDir, _ := os.Getwd()
+	currentDir, err := os.Getwd()
+
+	if err != nil {
+		fmt.Printf("Error: %s\n", err)
+	}
 
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
 
 	go func() {
 		<-sigChan
-		// fmt.Println("\nExiting...")
-		// os.Exit(0)
 	}()
 
 	fmt.Println("Welcome to Go Terminal! Type 'exit' to quit.")

@@ -1,6 +1,4 @@
-# go-terminal-app/go-terminal-app/README.md
-
-# Go Terminal App 
+# Go Open Shell 
 
 This project is a simple terminal-like application built in Go. It allows users to execute system commands and displays the output or error messages in a terminal interface.
 

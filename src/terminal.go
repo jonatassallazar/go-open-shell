@@ -1,4 +1,4 @@
-package main
+package terminal
 
 import (
 	"bufio"
@@ -11,7 +11,7 @@ import (
 	"syscall"
 )
 
-func main() {
+func OpenTerminal() {
 	reader := bufio.NewReader(os.Stdin)
 	currentDir, err := os.Getwd()
 
